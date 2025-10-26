@@ -43,11 +43,13 @@
 
 ## Overview
 
+Customer-Churn-TensorFlow is an end-to-end churn prediction workspace featuring Keras-based models trained on customer attributes and behavior signals, with saved artifacts for consistent inference across environments. The repo contains training and inference notebooks, a runnable app.py entry point, fitted preprocessing assets (scaler and geography encoder), and baseline regression/classification variants to benchmark results. After installing requirements, you can run the app for interactive scoring or use the prediction notebook to batch-score datasets with the provided model and preprocessors.
+
 ---
 
 ## Features
 
-<code>❯ REPLACE-ME</code>
+Binary churn prediction using a TensorFlow Keras model trained on customer demographics, account metrics, and geography, with saved artifacts for reproducible inference.
 
 ---
 
@@ -88,39 +90,39 @@
 			</thead>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/LICENSE'>LICENSE</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Repository license for Customer-Churn-TensorFlow.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/app.py'>app.py</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Streamlit entry script for loading scalers/encoders and serving churn predictions from saved Keras and pickle artifacts.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/experiments.ipynb'>experiments.ipynb</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Exploratory experiments for feature engineering, model trials, and evaluation.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/model.keras'>model.keras</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Trained TensorFlow Keras classification model for churn prediction.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/predictions.ipynb'>predictions.ipynb</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Notebook for batch/interactive predictions using saved model and preprocessors.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/regression inference.ipynb'>regression inference.ipynb</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Inference-only workflow for regression baseline variant on churn-related target.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/regression.ipynb'>regression.ipynb</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Training notebook for regression baseline and comparisons with classification model.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/regression.keras'>regression.keras</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Saved Keras model for the regression baseline.</code></td>
 				</tr>
 				<tr style='border-bottom: 1px solid #eee;'>
 					<td style='padding: 8px;'><b><a href='https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/requirements.txt'>requirements.txt</a></b></td>
-					<td style='padding: 8px;'>Code>❯ REPLACE-ME</code></td>
+					<td style='padding: 8px;'>Python dependencies to reproduce the environment.</code></td>
 				</tr>
 			</table>
 		</blockquote>
@@ -145,7 +147,7 @@ Build Customer-Churn-TensorFlow from the source and intsall dependencies:
 1. **Clone the repository:**
 
    ```sh
-   ❯ git clone https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow
+   ❯ git clone https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow.git
    ```
 
 2. **Navigate to the project directory:**
@@ -156,46 +158,17 @@ Build Customer-Churn-TensorFlow from the source and intsall dependencies:
 
 3. **Install the dependencies:**
 
-<!-- SHIELDS BADGE CURRENTLY DISABLED -->
-
-    <!-- [![pip][pip-shield]][pip-link] -->
-    <!-- REFERENCE LINKS -->
-    <!-- [pip-shield]: None -->
-    <!-- [pip-link]: None -->
-
-    **Using [pip](None):**
-
-    ```sh
-    ❯ echo 'INSERT-INSTALL-COMMAND-HERE'
-    ```
+   ```sh
+   ❯ pip install -r requirements.txt
+   ```
 
 ### Usage
 
 Run the project with:
 
-**Using [pip](None):**
-
 ```sh
-echo 'INSERT-RUN-COMMAND-HERE'
+❯ streamlit run app.py
 ```
-
-### Testing
-
-Customer-churn-tensorflow uses the {**test_framework**} test framework. Run the test suite with:
-
-**Using [pip](None):**
-
-```sh
-echo 'INSERT-TEST-COMMAND-HERE'
-```
-
----
-
-## Roadmap
-
-- [x] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
 
 ---
 
@@ -211,7 +184,7 @@ echo 'INSERT-TEST-COMMAND-HERE'
 1. **Fork the Repository**: Start by forking the project repository to your github account.
 2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
    ```sh
-   git clone https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow
+   git clone https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow.git
    ```
 3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
    ```sh
@@ -244,13 +217,9 @@ echo 'INSERT-TEST-COMMAND-HERE'
 
 ## License
 
-Customer-churn-tensorflow is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
+Customer-churn-tensorflow is protected under the [LICENSE](https://mit-license.org/) License. For more details, refer to the [LICENSE](https://github.com/LordZeusIsBack/Customer-Churn-TensorFlow/blob/main/LICENSE) file.
 
 ---
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
 
 <div align="right">
 
@@ -259,5 +228,3 @@ Customer-churn-tensorflow is protected under the [LICENSE](https://choosealicens
 </div>
 
 [back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-
----
